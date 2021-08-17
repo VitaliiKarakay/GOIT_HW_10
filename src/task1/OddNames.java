@@ -20,25 +20,24 @@ public class OddNames {
     }
 
     private static List<String> filterOdd(List<String> nameList) {
-        List<String> namesOddList = IntStream.range(0, nameList.size())
-                .filter(s -> (s%2 == 1))
+        return IntStream.range(0, nameList.size())
+                .filter(s -> (s % 2 == 1))
                 .mapToObj(nameList::get)
                 .collect(Collectors.toList());
-        return namesOddList;
     }
 
     private static void print(List<String> list) {
         int i = 1;
-        String string = "";
-        for (int j = 0; j < list.size(); j++) {
-            string = string + i + ". " + list.get(j) + ", ";
-            i+=2;
+        StringBuilder string = new StringBuilder();
+        for (String s : list) {
+            string.append(i).append(". ").append(s).append(", ");
+            i += 2;
         }
-        string = string.strip();
-        if (string.endsWith(",")) {
-            string = string.substring(0, string.length()-1);
+        string = new StringBuilder(string.toString().strip());
+        if (string.toString().endsWith(",")) {
+            string = new StringBuilder(string.substring(0, string.length() - 1));
         }
-        System.out.println(string.trim());
+        System.out.println(string.toString().trim());
     }
 
 }
