@@ -13,8 +13,8 @@ public class StreamShaker {
 
     public static void main(String[] args) {
 
-        List<String> firstList = Arrays.asList("A", "B", "C", "D");
-        List<String> secondList = Arrays.asList("1", "2", "3");
+        List<String> firstList = List.of("A", "B", "C", "D");
+        List<String> secondList = List.of("1", "2", "3", "4", "5");
         Stream<String> first = firstList.stream();
         Stream<String> second = secondList.stream();
 
@@ -26,6 +26,7 @@ public class StreamShaker {
 
         int a = 0;
         int b = 0;
+
 
         List<T> list = new ArrayList<>();
         List<T> list1 = first.collect(Collectors.toList());
